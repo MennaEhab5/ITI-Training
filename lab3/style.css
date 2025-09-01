@@ -116,18 +116,20 @@ nav a:hover {
 table {
     width: 90%;
     margin: auto;
+    border-collapse: collapse;
 }
 
 th,
 td {
-    border: 1px solid #802e47;
+    color: #650925;
+    border: 1px solid #650925;
     padding: 10px;
     transition: all ease-in-out 0.5s;
 }
 
 th:hover,
 td:hover {
-    color: #936070;
+    color: #9a576c;
     cursor: pointer;
 }
 
