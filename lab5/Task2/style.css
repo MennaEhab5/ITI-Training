@@ -1,0 +1,101 @@
+.building{
+    width: 350px;
+    height: 500px;
+    margin: auto;
+    margin-top: 80px;
+    padding-bottom: 70px;
+    background-color: #ccc;
+    position: relative;
+    border: 1px solid black;
+}
+
+.roof, .base{
+    width: 400px;
+    height: 30px;
+    position: absolute;
+    right: -25px;
+    left: -25px;
+    border: 1px solid black;
+}
+
+.roof{
+    top: -10px;
+    background-color: #4b656d;
+}
+
+.base{
+    bottom: -10px;
+    background-color: #495b60;
+}
+
+.windows{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:5px;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: space-evenly;
+}
+
+.window{
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgb(0, 0, 0);   
+    margin: auto;
+    background-color: rgb(62, 122, 131);
+    margin-top: 24px;
+}
+
+.door-header {
+    width: 200px;
+    height: 20px;
+    border: 2px solid rgb(0, 0, 0);   
+    background-color: rgb(20, 70, 77);  
+    grid-column: 2;      
+    justify-self: center;
+    position: relative;    
+    margin-top: 35px;
+}
+
+.door {
+    width: 180px;
+    height: 120px;
+    border: 2px solid rgb(0, 0, 0);
+    border-top: none;   
+    margin: auto;
+    background-color: #4b656d;
+    margin-top: 0px;
+    grid-column: 2;      
+    justify-self: center;
+    position: relative; 
+}
+.door1 {
+    width: 120px;
+    height: 120px;
+    border: 1px solid rgb(0, 0, 0);   
+    margin: auto;
+    background-color: rgb(62, 122, 131);
+    margin-top: 0px;
+    grid-column: 2;      
+    justify-self: center;
+    position: relative; 
+}
+.door::before{
+    content: "";
+    width: 10px;
+    height: 10px;
+    border: 2px solid rgb(0, 0, 0);   
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+.line {
+    width:1px;             
+    height: 100%;
+    background-color: black; 
+    margin: 0 auto;       
+}
