@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <h2>Shopping List</h2>
+  <input type="text" id="itemInput" placeholder="Type an item..." />
+  <button id="addBtn">Add</button>
+  <ul id="itemList"></ul> -->
+
+    <!-- <h2>Click the button to change background color</h2>
+    <button id="colorBtn">Change Color</button> -->
+
+    <!-- <h2>Image Toggle Example</h2>
+    <img
+      id="myImage"
+      src="images/0f43dd0c5b42c188c4833f002a80cdae.jpg"
+      width="200"
+    />
+    <br /><br />
+    <button id="toggleBtn">Change Image</button> -->
+
+    <h2>Mini Counter</h2>
+    <p id="counter">Number: 0</p>
+    <button id="decrease">-</button>
+    <button id="increase">+</button>
+
+    <script>
+      // Shopping List
+      // const input = document.getElementById("itemInput");
+      // const button = document.getElementById("addBtn");
+      // const list = document.getElementById("itemList");
+
+      // button.addEventListener("click", function () {
+      //   const text = input.value.trim();
+
+      //   if (text !== "") {
+      //     const li = document.createElement("li");
+      //     li.textContent = text;
+
+      //     list.appendChild(li);
+      //     input.value = "";
+      //   }
+      // });
+
+      //   Change background color
+      //   const colors = [
+      //     "red",
+      //     "blue",
+      //     "green",
+      //     "yellow",
+      //     "pink",
+      //     "purple",
+      //     "orange",
+      //   ];
+      //   const button = document.getElementById("colorBtn");
+
+      //   button.addEventListener("click", function () {
+      //     const randomIndex = Math.floor(Math.random() * colors.length);
+
+      //     document.body.style.backgroundColor = colors[randomIndex];
+      //   });
+
+      // Image Toggle
+      //   const image = document.getElementById("myImage");
+      //   const button = document.getElementById("toggleBtn");
+
+      //   const images = [
+      //     "images/0f43dd0c5b42c188c4833f002a80cdae.jpg",
+      //     "images/08af741c0b37a087bc5aa8815a551ed7.jpg",
+      //   ];
+
+      //   let i = 0;
+      //   button.addEventListener("click", function () {
+      //     i = (i + 1) % images.length;
+      //     image.src = images[i];
+      //   });
+
+      // Mini Counter
+      const counter = document.getElementById("counter");
+      const decrease = document.getElementById("decrease");
+      const increase = document.getElementById("increase");
+
+      let count = 0;
+      decrease.addEventListener("click", function () {
+        count--;
+        counter.textContent = "Number: " + count;
+      });
+
+      increase.addEventListener("click", function () {
+        count++;
+        counter.textContent = "Number: " + count;
+      });
+    </script>
+  </body>
+</html>

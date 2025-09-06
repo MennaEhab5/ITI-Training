@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <div>
+      <button onclick="increaseCount()">Click Me!</button>
+      <p id="counter">Count: 0</p>
+    </div> -->
+
+    <!-- <div>
+      <button id="btn">Click Me!</button>
+      <p id="counter">Count: 0</p>
+    </div> -->
+
+    <script>
+      // let count = 0;
+      // function increaseCount() {
+      //     count++;
+      //     document.getElementById("counter").innerHTML = "Count: " + count;
+      // }
+
+      
+      //   let count = 0;
+      //   const button = document.getElementById("btn");
+      //   const counter = document.getElementById("counter");
+      //   button.addEventListener("click", function () {
+      //     count++;
+      //     counter.textContent = "Count: " + count;
+      //   });
+    </script>
+  </body>
+</html>
