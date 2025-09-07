@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Project</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="theme-light">
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#">
+          <span class="brand__logo">⚡</span>
+          <span>Commented CSS UI</span>
+        </a>
+        <div class="actions">
+          <button id="themeBtn" class="btn outline" aria-pressed="false">
+            Toggle Theme
+          </button>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="container hero">
+        <div>
+          <h1>Clean, modern starter with <em>fully commented CSS</em>.</h1>
+          <p>
+            Use this page as a reference for what each CSS property does in a
+            real layout. Switch themes, hover the cards, and inspect the code.
+          </p>
+          <div class="actions">
+            <button id="cta" class="btn">Primary Action</button>
+            <button
+              class="btn outline"
+              onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})"
+            >
+              See Features
+            </button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="sparkle" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section id="features" class="container">
+        <div class="grid">
+          <article class="card">
+            <h3>Semantic HTML</h3>
+            <p>
+              Sections, articles, headers, and footers organize content
+              meaningfully.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Responsive Grid</h3>
+            <p>
+              The card grid auto-fits columns and adapts across screen sizes.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Accessible Focus</h3>
+            <p>
+              Inputs use a visible focus ring, improving keyboard navigation.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Theme Tokens</h3>
+            <p>
+              Change a few custom properties to re-skin the entire interface.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <section id="contact">
+      <div class="container">
+        <div class="panel">
+          <h2>Get in touch</h2>
+          <form id="contactForm" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Jane Doe"
+                required
+              />
+              <small class="error" id="nameError"></small>
+              <div class="helper">Enter 3 or more characters.</div>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                required
+              />
+              <small class="error" id="emailError"></small>
+              <div class="helper">We'll never share your email.</div>
+            </div>
+            <button class="btn" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <small
+          >© <span id="year">2025</span> Commented CSS UI. Built for
+          teaching.</small
+        >
+      </div>
+    </footer>
+
+    <script>
+      const themeBtn = document.getElementById("themeBtn");
+      themeBtn.addEventListener("click", () => {
+        const body = document.body;
+        const isLight = body.classList.toggle("theme-light");
+        themeBtn.setAttribute("aria-pressed", String(!isLight));
+        localStorage.setItem("prefersLight", String(isLight));
+      });
+
+      (function restoreTheme() {
+        const saved = localStorage.getItem("prefersLight");
+        if (saved !== null) {
+          document.body.classList.toggle("theme-light", saved === "true");
+        }
+      })();
+
+      document.getElementById("cta").addEventListener("click", () => {
+        alert("Nice! Buttons provide visual and motion feedback via CSS.");
+      });
+
+      document.getElementById("contactForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const nameError = document.getElementById("nameError");
+        const emailError = document.getElementById("emailError");
+        nameError.textContent = "";
+        emailError.textContent = "";
+        let hasProblem = false;
+        if (!name.value || name.value.trim().length < 3) {
+          nameError.textContent = "Please enter a valid name.";
+          hasProblem = true;
+        }
+        if (!email.validity.valid) {
+          emailError.textContent = "Please enter a valid email address.";
+          hasProblem = true;
+        }
+        if (!hasProblem) {
+          alert("Thanks! Your (demo) form was submitted.");
+          e.target.reset();
+        }
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
